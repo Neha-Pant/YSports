@@ -7,6 +7,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>yensports Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <!-- Property List -->
+  <properties>
+  <spring.version>4.3.6.RELEASE</spring.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,7 +18,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+  <!-- Spring MVC Dependency -->
+    <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>${spring.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>yensports</finalName>
