@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,8 +12,11 @@
 
 <link rel="stylesheet" href="${css}/bootstrap.min.css" />
 <link rel="stylesheet" href="${css}/style.css" />
+<link rel="stylesheet" href="${css}/jquery.dataTables.min.css" />
 <script src="${js}/jquery.js"></script>
 <script src="${js}/bootstrap.min.js"></script>
+<script src="${js}/jquery.dataTables.min.js"></script>
+<script src="${js}/datatablescript.js"></script>
 <style>
 #custom-search-input {
 	margin: 0;
@@ -62,7 +66,8 @@
 					<div class="collapse navbar-collapse" id="menuBar">
 						<!-- Navbar-fixed-top -->
 						<ul class="nav navbar-nav" style="font-size: 8pt">
-							<li class="active"><a href="${pageContext.request.contextPath}/index"></span><img
+							<li class="active"><a
+								href="${pageContext.request.contextPath}/index"></span><img
 									src="${images}/zensports.png"
 									style="height: 20pt; width: 100pt" /></a></li>
 							<li><a href="/#/"><span
@@ -105,13 +110,9 @@
 					</div>
 				</div>
 
-				<div class="row" style="height: 10%">
-					<div class="col-md-12"></div>
-				</div>
-
 				<div class="row jumbotron" style="height: 70%">
 					<div class="col-md-12">
-						<table class="table table-striped">
+						<table id="myDataTable" class="table table-striped">
 							<thead>
 								<tr>
 									<th>Product ID</th>
@@ -124,112 +125,22 @@
 									<th>Add to Cart</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>101</td>
-									<td><img src="${images}/P1.jpg"
-										style="height: 80px; width: 80px" /></td>
-									<td>ONMOVE 50 GPS WATCH</td>
-									<td>Fitness</td>
-									<td>GPS,Atheletes,Monitor,Speed,Distance</td>
-									<td>&#8377;3999</td>
-									<td>
-										<p data-placement="top" title="View">
-											<a href="${pageContext.request.contextPath}/productDetails"
-												class="btn btn-primary btn-xs"> <span
-												class="glyphicon glyphicon-search"></span></a>
-										</p>
-									</td>
-									<td>
-										<p data-placement="top" title="Cart">
-											<a href="#" class="btn btn-danger btn-xs"> <span
-												class="glyphicon glyphicon-shopping-cart"></span></a>
-										</p>
-									</td>
-									</td>
-								</tr>
-								<tr>
-									<td>101</td>
-									<td><img src="${images}/P1.jpg"
-										style="height: 80px; width: 80px" /></td>
-									<td>ONMOVE 50 GPS WATCH</td>
-									<td>Fitness</td>
-									<td>GPS,Atheletes,Monitor,Speed,Distance</td>
-									<td>&#8377;3999</td>
-									<td>
-										<p data-placement="top" title="View">
-											<a href="#" class="btn btn-primary btn-xs"> <span
-												class="glyphicon glyphicon-search"></span></a>
-										</p>
-									</td>
-									<td>
-										<p data-placement="top" title="Cart">
-											<a href="#" class="btn btn-danger btn-xs"> <span
-												class="glyphicon glyphicon-shopping-cart"></span></a>
-										</p>
-									</td>
-									</td>
-								</tr>
-								<tr>
-									<td>101</td>
-									<td><img src="${images}/P1.jpg"
-										style="height: 80px; width: 80px" /></td>
-									<td>ONMOVE 50 GPS WATCH</td>
-									<td>Fitness</td>
-									<td>GPS,Atheletes,Monitor,Speed,Distance</td>
-									<td>&#8377;3999</td>
-									<td>
-										<p data-placement="top" title="View">
-											<a href="#" class="btn btn-primary btn-xs"> <span
-												class="glyphicon glyphicon-search"></span></a>
-										</p>
-									</td>
-									<td>
-										<p data-placement="top" title="Cart">
-											<a href="#" class="btn btn-danger btn-xs"> <span
-												class="glyphicon glyphicon-shopping-cart"></span></a>
-										</p>
-									</td>
-									</td>
-								</tr>
-								<tr>
-									<td>101</td>
-									<td><img src="${images}/P1.jpg"
-										style="height: 80px; width: 80px" /></td>
-									<td>ONMOVE 50 GPS WATCH</td>
-									<td>Fitness</td>
-									<td>GPS,Atheletes,Monitor,Speed,Distance</td>
-									<td>&#8377;3999</td>
-									<td>
-										<p data-placement="top" title="View">
-											<a href="#" class="btn btn-primary btn-xs"> <span
-												class="glyphicon glyphicon-search"></span></a>
-										</p>
-									</td>
-									<td>
-										<p data-placement="top" title="Cart">
-											<a href="#" class="btn btn-danger btn-xs"> <span
-												class="glyphicon glyphicon-shopping-cart"></span></a>
-										</p>
-									</td>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+													</table>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row footer">
 				<div class="col-md-12">
-				<nav class="navbar navbar">
-					<center>
-						<p>Copyright 2017 © ZenSports.com | All Rights
-							Reserved By Neha@NIIT</p>
-					</center>
-				</nav>
-			</div></div>
-			
+					<nav class="navbar navbar">
+						<center>
+							<p>Copyright 2017 © ZenSports.com | All Rights Reserved
+								By Neha@NIIT</p>
+						</center>
+					</nav>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </body>

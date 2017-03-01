@@ -1,12 +1,21 @@
 package com.sports.yensports.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sports.yensports.CategoryDAO.ICategoryDAO;
+
 @Controller
 public class YenSportsController 
 {
+	
+	@Autowired
+	private ICategoryDAO categoryDAO;
+	
 	@RequestMapping(value={"/","/home","/index"}) 
 	public ModelAndView index(){ 
 	ModelAndView model=new ModelAndView("index"); 
@@ -16,24 +25,12 @@ public class YenSportsController
 	@RequestMapping(value={"/login"}) 
 	public ModelAndView login(){ 
 	ModelAndView model=new ModelAndView("login"); 
-	return model; 
+	return model;
 	}
 	
 	@RequestMapping(value={"/register"}) 
 	public ModelAndView register(){ 
 	ModelAndView model=new ModelAndView("Register"); 
-	return model; 
-	} 
-	
-	@RequestMapping(value={"/product"}) 
-	public ModelAndView product(){ 
-	ModelAndView model=new ModelAndView("Products"); 
-	return model; 
-	}
-	
-	@RequestMapping(value={"/productDetails"}) 
-	public ModelAndView productDetails(){ 
-	ModelAndView model=new ModelAndView("ProductDetails"); 
 	return model; 
 	} 
 
