@@ -4,7 +4,21 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+
+<!-- if somebody does not want to follow the convention of naming applicationContext then add : -->
+<context-param>
+<param-name>ContextConfigLocation</param-name>
+<param-value>
+/WEB-INF/applicationContext.xml
+/WEB-INF/dispatcher-Servlet.xml
+</param-value>
+</context-param>
+
+<!-- Loading applicationContext.xml -->
+<listener>
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>  
+
   <servlet>
   <servlet-name>dispatcher</servlet-name>
   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

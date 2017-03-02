@@ -7,17 +7,17 @@ $('#myDataTable').DataTable( {
 	    },
     columns: [
         { data: 'productId' },
+        { data: 'productName' },
         { data: null,
         	mRender: function ( data, type, row ) {
-                return '<img src="/yensports/resources/images/'+ row.productImage +'" height="50" width="50">'; },
+                return '<img src="/yensports/resources/images/'+ row.productImage +'" height="50" width="50">'; }
         },
-        { data: 'productName' },
         { data: 'productCategory' },
         { data: 'productKeyword' },
         { data: 'productPrice' },
         {data: null,
         	mRender: function ( data, type, row ) {
-                return '<a class="btn btn-primary" href="'+data+'">View Item</a>';}
+                return '<a class="btn btn-default" href="/yensports/showProduct/'+row.productId+'">View Item</a>';}
         },
         {data: null,
         	mRender: function ( data, type, row ) {

@@ -12,9 +12,9 @@ import com.sports.yensports.CategoryDAO.ICategoryDAO;
 @Controller
 public class YenSportsController 
 {
-	
-	@Autowired
-	private ICategoryDAO categoryDAO;
+//	
+//	@Autowired
+//	private ICategoryDAO categoryDAO;
 	
 	@RequestMapping(value={"/","/home","/index"}) 
 	public ModelAndView index(){ 
